@@ -2,7 +2,7 @@
 
 namespace Untek\Develop\Package\Domain\Services;
 
-use Untek\Domain\Service\Base\BaseCrudService;
+use Untek\Model\Service\Base\BaseCrudService;
 use Untek\Develop\Package\Domain\Interfaces\Repositories\PackageRepositoryInterface;
 use Untek\Develop\Package\Domain\Interfaces\Services\PackageServiceInterface;
 

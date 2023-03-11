@@ -2,7 +2,7 @@
 
 namespace Untek\Develop\Package\Domain\Entities;
 
-use Untek\Domain\Entity\Interfaces\EntityIdInterface;
+use Untek\Model\Entity\Interfaces\EntityIdInterface;
 
 class PackageEntity implements EntityIdInterface
 {

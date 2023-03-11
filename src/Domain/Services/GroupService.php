@@ -2,7 +2,7 @@
 
 namespace Untek\Develop\Package\Domain\Services;
 
-use Untek\Domain\Service\Base\BaseCrudService;
+use Untek\Model\Service\Base\BaseCrudService;
 use Untek\Develop\Package\Domain\Repositories\File\GroupRepository;
 
 class GroupService extends BaseCrudService

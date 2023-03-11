@@ -3,7 +3,7 @@
 namespace Untek\Develop\Package\Domain\Interfaces\Repositories;
 
 use Untek\Core\Collection\Interfaces\Enumerable;
-use Untek\Domain\Domain\Interfaces\GetEntityClassInterface;
+use Untek\Model\Shared\Interfaces\GetEntityClassInterface;
 use Untek\Develop\Package\Domain\Entities\PackageEntity;
 
 interface GitRepositoryInterface extends GetEntityClassInterface
