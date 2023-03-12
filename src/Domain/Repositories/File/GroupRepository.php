@@ -7,7 +7,7 @@ use Untek\Core\Collection\Helpers\CollectionHelper;
 use Untek\Model\Entity\Interfaces\EntityIdInterface;
 use Untek\Model\Query\Entities\Query;
 use Untek\Model\Repository\Interfaces\ReadRepositoryInterface;
-use Untek\Lib\Components\Store\StoreFile;
+use Untek\Component\FormatAdapter\StoreFile;
 use Untek\Develop\Package\Domain\Entities\GroupEntity;
 
 class GroupRepository implements ReadRepositoryInterface
