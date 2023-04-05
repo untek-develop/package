@@ -10,8 +10,8 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "untek-pack/model": "0.x-dev",
-    "untek-develop/bundle": "0.x-dev",
+    "untek-pack/model": "0.1.x-dev",
+    "untek-develop/bundle": "0.1.x-dev",
     "untek-component/format-adapter": "0.x-dev"
   },
   "autoload": {
