@@ -13,11 +13,13 @@ use Untek\Develop\Package\Commands\GitPullCommand;
 use Untek\Develop\Package\Commands\GitPushCommand;
 use Untek\Develop\Package\Commands\GitStashAllCommand;
 use Untek\Develop\Package\Commands\GitVersionCommand;
+use Untek\Develop\Package\Commands\GitCheckoutCommand;
 
 return function (CommandConfiguratorInterface $commandConfigurator) {
     $commandConfigurator->registerCommandClass(DepsCommand::class);
     $commandConfigurator->registerCommandClass(DepsUnusedCommand::class);
     $commandConfigurator->registerCommandClass(GitBranchByVersionCommand::class);
+    $commandConfigurator->registerCommandClass(GitCheckoutCommand::class);
     $commandConfigurator->registerCommandClass(GitBranchCheckoutToRootCommand::class);
     $commandConfigurator->registerCommandClass(GitBranchCommand::class);
     $commandConfigurator->registerCommandClass(GitChangedCommand::class);

@@ -94,6 +94,7 @@ return static function (ContainerConfigurator $configurator): void {
         DepsCommand::class,
         DepsUnusedCommand::class,
         GitBranchByVersionCommand::class,
+        \Untek\Develop\Package\Commands\GitCheckoutCommand::class,
         GitBranchCheckoutToRootCommand::class,
         GitBranchCommand::class,
         GitChangedCommand::class,
