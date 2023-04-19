@@ -10,7 +10,7 @@ use Untek\Model\Entity\Helpers\EntityHelper;
 use Untek\Component\Web\Controller\Base\BaseWebController;
 use Untek\Component\Web\Controller\Interfaces\ControllerAccessInterface;
 use Untek\Component\Web\Form\Libs\FormManager;
-use Untek\Component\Web\Layout\Libs\LayoutManager;
+use Untek\FrameworkPlugin\HttpLayout\Infrastructure\Libs\LayoutManager;
 use Untek\Develop\Package\Domain\Entities\FavoriteEntity;
 use Untek\Develop\Package\Domain\Helpers\FavoriteHelper;
 use Untek\Develop\Package\Domain\Helpers\TableMapperHelper;
