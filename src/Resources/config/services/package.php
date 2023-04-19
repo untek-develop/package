@@ -55,7 +55,7 @@ return static function (ContainerConfigurator $configurator): void {
 
     $fileName = getenv('PACKAGE_GROUP_CONFIG') ? getenv(
         'PACKAGE_GROUP_CONFIG'
-    ) : __DIR__ . '/../../../../Domain/Data/package_group.php';
+    ) : __DIR__ . '/../../../Domain/Data/package_group.php';
     $services->set(
         \Untek\Develop\Package\Domain\Repositories\File\GroupRepository::class,
         \Untek\Develop\Package\Domain\Repositories\File\GroupRepository::class
