@@ -13,11 +13,40 @@ use Untek\Develop\Package\Domain\Libs\Deps\PhpUsesParser;
 
 class DependencyService
 {
+    public function findByDir(string $dir) {
+        $classUsesParser = new PhpUsesParser();
 
+        $options['only'][] = '*.php';
+        $files = FileHelper::findFiles($dir, $options);
+
+        $packageClasses = [];
+        $unused = [];
+
+        foreach ($files as $filePath) {
+            $code = file_get_contents($filePath);
+            $classesFromUses = $classUsesParser->parse($code);
+            $unused[$filePath] = $classesFromUses;
+
+//            dump($classesFromUses);
+//            $code = $classUsesParser->removeUses($code);
+////                dd($code);
+//            if ($classesFromUses) {
+//                foreach ($classesFromUses as $alias => $use) {
+//                    $has = strpos($code, $alias) !== false;
+//                    if(!$has) {
+//                        $unused[$filePath][] = $use;
+//                    }
+//                }
+//            }
+        }
+        return $unused;
+//        dd($unused);
+    }
+    
     public function findUsedClasses($selectedCollection)
     {
-        $classNameStringParser = new PhpClassNameInQuotedStringParser();
-        $classNameParser = new PhpClassNameParser();
+//        $classNameStringParser = new PhpClassNameInQuotedStringParser();
+//        $classNameParser = new PhpClassNameParser();
         $classUsesParser = new PhpUsesParser();
 
         $packageClasses = [];

@@ -47,9 +47,12 @@ class PhpUsesParser
                 $alias = ClassHelper::getClassOfClassName($useItem);
                 $path = $useItem;
             }
-
+            if(strpos($path, 'function ') !== false) {
+                $path = str_replace('function ', '', $path);
+            }
             $uses[$alias] = $path;
         }
+
         return $uses;
     }
 
