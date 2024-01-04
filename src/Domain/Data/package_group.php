@@ -52,6 +52,11 @@ return [
         'authors' => [],
     ],
     [
+        'name' => 'untek-private-project',
+        'provider_name' => 'github',
+        'authors' => [],
+    ],
+    [
         'name' => 'untek-crypt',
         'provider_name' => 'github',
         'authors' => [],
