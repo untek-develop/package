@@ -49,7 +49,9 @@ class GitPullCommand extends BaseCommand
             } else {
                 $totalCollection->add($packageEntity);
             }
-            $output->writeln($result);
+            if($result) {
+                $output->writeln($result);
+            }
         }
         return $totalCollection;
     }

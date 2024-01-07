@@ -517,7 +517,9 @@ class GitShell extends BaseShell
         if(is_array($result)) {
             $result = implode(PHP_EOL, $result);
         }
-        $result = trim($result);
+        if($result) {
+            $result = trim($result); 
+        }
         return $result;
     }
 
