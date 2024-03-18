@@ -15,6 +15,7 @@ use Untek\Develop\Package\Commands\GitStashAllCommand;
 use Untek\Develop\Package\Commands\GitVersionCommand;
 use Untek\Develop\Package\Commands\GitCheckoutCommand;
 
+\Untek\Core\Code\Helpers\DeprecateHelper::hardThrow();
 return function (CommandConfiguratorInterface $commandConfigurator) {
     $commandConfigurator->registerCommandClass(DepsCommand::class);
     $commandConfigurator->registerCommandClass(DepsUnusedCommand::class);

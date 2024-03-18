@@ -112,7 +112,8 @@ return static function (ContainerConfigurator $configurator): void {
                     service(PackageServiceInterface::class),
                     service(GitServiceInterface::class),
                 ]
-            );
+            )
+            ->tag('console.command');
     }
     
 };
