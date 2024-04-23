@@ -52,7 +52,9 @@ class GitPushCommand extends BaseCommand
             if ($result == 'Already up to date.') {
                 $result = "<fg=green>{$result}</>";
             }
-            $output->writeln($result);
+            if($result) {
+                $output->writeln($result);
+            }
         }
 
         return 0;
