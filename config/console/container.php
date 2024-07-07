@@ -12,7 +12,7 @@ $fileLocator = new FileLocator(__DIR__);
 $loader = new PhpFileLoader($containerBuilder, $fileLocator);
 
 // Console framework
-$loader->load(__DIR__ . '/../../../../../../../vendor/untek-framework/console/src/resources/config/services/main.php');
+$loader->load(__DIR__ . '/../../../../../vendor/untek-framework/console/src/resources/config/services/main.php');
 
 // Package utility
-$loader->load(__DIR__ . '/../../../../../../../vendor/untek-develop/package/src/resources/config/services/package.php');
+$loader->load(__DIR__ . '/../../../../../vendor/untek-develop/package/src/resources/config/services/package.php');

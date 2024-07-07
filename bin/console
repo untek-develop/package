@@ -12,7 +12,7 @@ require __DIR__ . '/../../../autoload.php';
 $input = new ArgvInput();
 $mode = $input->getParameterOption('--mode', 'main');
 $projectDirectory = realpath(__DIR__ . '/../../../..');
-$appDirectory = realpath(__DIR__ . '/app');
+$appDirectory = realpath(__DIR__ . '/..');
 $isTest = $mode == 'test';
 
 $context = 'console';
