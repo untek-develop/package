@@ -1,3 +1,3 @@
 #!/bin/sh
-cd ../../../untek-framework/console/bin
-php zn package:git:changed
+#cd ../../../untek-framework/console/bin
+php console package:git:changed
