@@ -8,7 +8,7 @@ use Untek\Model\Repository\Interfaces\FindOneInterface;
 //use Untek\Model\Repository\Interfaces\RelationConfigInterface;
 use Untek\Model\Repository\Interfaces\RepositoryInterface;
 
-interface PackageRepositoryInterface extends RepositoryInterface, GetEntityClassInterface, ReadAllInterface, FindOneInterface//, RelationConfigInterface
+interface PackageRepositoryInterface //extends RepositoryInterface, GetEntityClassInterface, ReadAllInterface, FindOneInterface//, RelationConfigInterface
 {
 
 }

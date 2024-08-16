@@ -19,6 +19,7 @@ use Untek\Develop\Package\Domain\Interfaces\Services\GitServiceInterface;
 use Untek\Develop\Package\Domain\Interfaces\Services\PackageServiceInterface;
 use Untek\Develop\Package\Domain\Repositories\File\GroupRepository;
 
+use Untek\Develop\Package\Domain\Repositories\File\PackageRepository;
 use function Symfony\Component\DependencyInjection\Loader\Configurator\service;
 
 return static function (ContainerConfigurator $configurator): void {
@@ -97,7 +98,6 @@ return static function (ContainerConfigurator $configurator): void {
         \Untek\Develop\Package\Commands\GitCheckoutCommand::class,
         GitBranchCheckoutToRootCommand::class,
         GitBranchCommand::class,
-        GitChangedCommand::class,
         GithubOrgsCommand::class,
         GitNeedReleaseCommand::class,
         GitPullCommand::class,
@@ -115,5 +115,14 @@ return static function (ContainerConfigurator $configurator): void {
             )
             ->tag('console.command');
     }
-    
+
+    $services->set(GitChangedCommand::class)
+        ->args(
+            [
+                service(PackageRepositoryInterface::class),
+                service(GitServiceInterface::class),
+            ]
+        )
+        ->tag('console.command');
+
 };

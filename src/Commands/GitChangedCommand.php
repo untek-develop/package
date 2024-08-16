@@ -9,16 +9,28 @@ use Untek\Core\Collection\Libs\Collection;
 use Untek\Develop\Package\Domain\Entities\ChangedEntity;
 use Untek\Develop\Package\Domain\Entities\PackageEntity;
 use Untek\Develop\Package\Domain\Enums\StatusEnum;
+use Untek\Develop\Package\Domain\Interfaces\Services\GitServiceInterface;
+use Untek\Develop\Package\Domain\Interfaces\Services\PackageServiceInterface;
+use Symfony\Component\Console\Command\Command;
+use Untek\Develop\Package\Domain\Repositories\File\PackageRepository;
 
-class GitChangedCommand extends BaseCommand
+class GitChangedCommand extends Command
 {
 
     protected static $defaultName = 'package:git:changed';
 
+    public function __construct(
+        private PackageRepository $packageRepository,
+        private GitServiceInterface $gitService,
+    )
+    {
+        parent::__construct(self::$defaultName);
+    }
+
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln('<fg=white># Packages with changes</>');
-        $collection = $this->packageService->findAll();
+        $collection = $this->packageRepository->findAll();
         $output->writeln('');
         if ($collection->count() == 0) {
             $output->writeln('<fg=magenta>Not found packages!</>');
