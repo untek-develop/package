@@ -10,7 +10,7 @@ use Untek\Model\Repository\Interfaces\ReadRepositoryInterface;
 use Untek\Component\FormatAdapter\StoreFile;
 use Untek\Develop\Package\Domain\Entities\GroupEntity;
 
-class GroupRepository implements ReadRepositoryInterface
+class GroupRepository //implements ReadRepositoryInterface
 {
 
     private $fileName;

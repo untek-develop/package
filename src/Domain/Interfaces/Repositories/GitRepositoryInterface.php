@@ -6,7 +6,7 @@ use Untek\Core\Collection\Interfaces\Enumerable;
 use Untek\Model\Shared\Interfaces\GetEntityClassInterface;
 use Untek\Develop\Package\Domain\Entities\PackageEntity;
 
-interface GitRepositoryInterface extends GetEntityClassInterface
+interface GitRepositoryInterface //extends GetEntityClassInterface
 {
 
     public function isHasChanges(PackageEntity $packageEntity): bool;
