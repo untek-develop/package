@@ -8,7 +8,7 @@ use Untek\Core\Arr\Helpers\ArrayHelper;
 use Symfony\Component\Validator\Constraints as Assert;
 use Untek\Model\Validator\Interfaces\ValidationByMetadataInterface;
 
-class ConfigEntity implements ValidationByMetadataInterface, EntityIdInterface
+class ConfigEntity //implements ValidationByMetadataInterface, EntityIdInterface
 {
 
     private $id = null;
