@@ -4,6 +4,7 @@ namespace Untek\Develop\Package\Domain\Repositories\File;
 
 use Untek\Core\Collection\Interfaces\Enumerable;
 use Untek\Core\Collection\Helpers\CollectionHelper;
+use Untek\Database\Base\Hydrator\Traits\NormalizerTrait;
 use Untek\Model\Entity\Interfaces\EntityIdInterface;
 use Untek\Model\Query\Entities\Query;
 use Untek\Model\Repository\Interfaces\ReadRepositoryInterface;
@@ -13,6 +14,8 @@ use Untek\Develop\Package\Domain\Entities\GroupEntity;
 class GroupRepository //implements ReadRepositoryInterface
 {
 
+    use NormalizerTrait;
+
     private $fileName;
 
     public function __construct(string $fileName)
@@ -20,15 +23,17 @@ class GroupRepository //implements ReadRepositoryInterface
         $this->fileName = $fileName;
     }
 
-    public function findAll(Query $query = null): Enumerable
+    public function findAll(Query $query = null): array
     {
         $store = new StoreFile($this->fileName);
         $array = $store->load();
+
+        return $this->denormalizeCollection($array);
+
         //$collection = $this->forgeEntityCollection($array);
         //return $collection;
-
-        $entityClass = $this->getEntityClass();
-        return CollectionHelper::create($entityClass, $array);
+//        $entityClass = $this->getEntityClass();
+//        return CollectionHelper::create($entityClass, $array);
     }
 
     public function count(Query $query = null): int
@@ -46,6 +51,13 @@ class GroupRepository //implements ReadRepositoryInterface
     {
         return GroupEntity::class;
     }
+
+    public function getClassName(): string
+    {
+        return GroupEntity::class;
+    }
+
+
 
     /*public function _relations()
     {
